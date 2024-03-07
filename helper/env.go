@@ -1,7 +1,6 @@
 package helper
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -19,8 +18,6 @@ func SetEnvironment() {
 
 func GinMode() {
 	mode := os.Getenv("GIN_MODE")
-
-	fmt.Printf("GIN_MODE=%s\n", mode)
 
 	if mode != "debug" && mode != "release" {
 		panic("Invalid Gin mode: " + mode)
