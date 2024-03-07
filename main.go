@@ -36,6 +36,6 @@ func main() {
 		}
 	}
 
-	routes.Get(app)
+	routes.Get(app, db)
 	app.Run()
 }
