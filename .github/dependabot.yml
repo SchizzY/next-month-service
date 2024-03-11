@@ -27,6 +27,7 @@ updates:
       - "octocat"
     labels:
       - "dependencies"
+      - "gomod"
     commit-message:
       # Prefix all commit messages with "gomod: "
       prefix: "gomod"
