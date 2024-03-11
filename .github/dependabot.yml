@@ -41,3 +41,13 @@ updates:
         dependency-type: "production"
       dev-deps:
         dependency-type: "development"
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "docker"
+      - "dependencies"
+    commit-message:
+      prefix: "docker "
+      include: "scope"
