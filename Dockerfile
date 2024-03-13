@@ -16,13 +16,12 @@ ARG SERVICE_ID
 # Leverage a cache mount to /go/pkg/mod/ to speed up subsequent builds.
 # Leverage bind mounts to go.sum and go.mod to avoid having to copy them into
 # the container.
-RUN --mount=type=cache,id=s/${SERVICE_ID}-/root/.gradle,target=/go/pkg/mod/ \
+RUN --mount=type=cache,id=gradle-${SERVICE_ID},target=/go/pkg/mod/ \
     --mount=type=bind,source=go.sum,target=go.sum \
     --mount=type=bind,source=go.mod,target=go.mod \
     go mod download -x
 
-# Build the application.
-RUN --mount=type=cache,id=s/${SERVICE_ID}-/root/.gradle,target=/go/pkg/mod/ \
+RUN --mount=type=cache,id=gradle-${SERVICE_ID},target=/go/pkg/mod/ \
     --mount=type=bind,target=. \
     CGO_ENABLED=0 go build -o /bin/server .
 
