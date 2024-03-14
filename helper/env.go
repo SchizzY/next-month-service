@@ -8,9 +8,11 @@ import (
 )
 
 func SetEnvironment() {
-	err := godotenv.Load()
-	if err != nil {
-		panic(err)
+	if os.Getenv("FLY_APP_NAME") == "" {
+		err := godotenv.Load()
+		if err != nil {
+			panic(err)
+		}
 	}
 
 	GinMode()

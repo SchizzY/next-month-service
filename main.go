@@ -37,5 +37,5 @@ func main() {
 	}
 
 	routes.Get(app, db)
-	app.Run()
+	app.Run("0.0.0.0:8080")
 }
