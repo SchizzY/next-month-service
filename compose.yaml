@@ -19,6 +19,9 @@ services:
       target: final
     ports:
       - 8080:8080
+    environment:
+      - CON=${CON}
+      - GIN_MODE=${GIN_MODE}
     develop:
       watch:
         - action: rebuild
