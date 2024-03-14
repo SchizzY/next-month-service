@@ -4,17 +4,9 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 )
 
 func SetEnvironment() {
-	if os.Getenv("FLY_APP_NAME") == "" {
-		err := godotenv.Load()
-		if err != nil {
-			panic(err)
-		}
-	}
-
 	GinMode()
 }
 
