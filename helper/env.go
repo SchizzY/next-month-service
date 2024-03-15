@@ -4,15 +4,9 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 )
 
 func SetEnvironment() {
-	err := godotenv.Load()
-	if err != nil {
-		panic(err)
-	}
-
 	GinMode()
 }
 
